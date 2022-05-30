@@ -1,0 +1,40 @@
+2022-05-26 12:52:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  [*])"; se esperaba "identifier"
+Syntax error in SQL statement "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  [*])"; expected "identifier"; SQL statement:
+CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  ) [42001-212]
+2022-05-26 12:58:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  [*]);\000a"; se esperaba "identifier"
+Syntax error in SQL statement "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  [*]);\000a"; expected "identifier"; SQL statement:
+CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  );
+ [42001-212]
+2022-05-26 13:05:18 database: wrong user or password; user: "ROOT"
+org.h2.message.DbException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-212]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Main.getConnection(Main.java:23)
+	at Main.main(Main.java:32)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 13 more
+2022-05-26 13:05:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  [*]);\000a"; se esperaba "identifier"
+Syntax error in SQL statement "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  [*]);\000a"; expected "identifier"; SQL statement:
+CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA varchar(50) NOT NULL,  COLOR varchar(25) NOT NULL,  );
+ [42001-212]
+2022-05-26 13:07:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA VARCHAR(50) NOT NULL,  COLOR VARCHAR(25) NOT NULL,  [*]);\000a"; se esperaba "identifier"
+Syntax error in SQL statement "CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA VARCHAR(50) NOT NULL,  COLOR VARCHAR(25) NOT NULL,  [*]);\000a"; expected "identifier"; SQL statement:
+CREATE TABLE FIGURA ( ID INT PRIMARY KEY, FIGURA VARCHAR(50) NOT NULL,  COLOR VARCHAR(25) NOT NULL,  );
+ [42001-212]

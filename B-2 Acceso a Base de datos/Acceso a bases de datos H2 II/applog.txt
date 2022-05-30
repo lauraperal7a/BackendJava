@@ -1,0 +1,31 @@
+ERROR   2022-05-27 15:04:08,123 [main] Clase12  - Estas insertando un registro con ID repetido
+ERROR   2022-05-27 15:13:12,293 [main] Clase12  - Estas insertando un registro con ID repetido
+ERROR   2022-05-27 15:15:19,885 [main] Clase12  - Estas insertando un registro con ID repetido
+ERROR   2022-05-27 15:20:14,034 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:23:09,287 [main] Clase12  - Modificaste al empleado
+DEBUG   2022-05-27 15:24:55,312 [main] Clase12  - Modificaste al empleadors6: org.h2.result.LocalResult@6e171cd7 columns: 5 rows: 1 pos: -1
+ERROR   2022-05-27 15:24:55,339 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:26:38,893 [main] Clase12  - Modificaste al empleado
+DEBUG   2022-05-27 15:29:34,129 [main] Clase12  - Modificaste al empleado
+INFO    2022-05-27 15:29:34,133 [main] Clase12  - Eliminaste al empleado
+ERROR   2022-05-27 15:29:34,166 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:31:35,417 [main] Clase12  - Modificaste al empleado
+INFO    2022-05-27 15:31:35,419 [main] Clase12  - Eliminaste al empleado
+ERROR   2022-05-27 15:31:35,539 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:33:40,598 [main] Clase12  - Modificaste al empleado
+ERROR   2022-05-27 15:33:40,629 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:33:56,615 [main] Clase12  - Modificaste al empleado
+INFO    2022-05-27 15:33:56,615 [main] Clase12  - Eliminaste al empleado
+ERROR   2022-05-27 15:33:56,646 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:34:18,248 [main] Clase12  - Modificaste al empleado
+INFO    2022-05-27 15:34:18,248 [main] Clase12  - Eliminaste al empleado
+DEBUG   2022-05-27 15:34:54,583 [main] Clase12  - Modificaste al empleado
+ERROR   2022-05-27 15:36:40,774 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-27 15:36:58,312 [main] Clase12  - Modificaste al empleado
+INFO    2022-05-27 15:36:58,312 [main] Clase12  - Eliminaste al empleado
+ERROR   2022-05-27 15:36:58,374 [main] Clase12  - Estas insertando un registro con ID repetido
+ERROR   2022-05-27 15:49:03,751 [main] Clase12  - Estas insertando un registro con ID repetido
+ERROR   2022-05-27 15:50:20,260 [main] Clase12  - Estas insertando un registro con ID repetido
+DEBUG   2022-05-30 14:48:09,127 [main] Clase12  - Modificaste al empleado
+INFO    2022-05-30 14:48:09,139 [main] Clase12  - Eliminaste al empleado
+ERROR   2022-05-30 14:48:09,166 [main] Clase12  - Estas insertando un registro con ID repetido

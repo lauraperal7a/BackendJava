@@ -1,0 +1,13 @@
+Consultar saldo 
+
+Crear una entidad que se llame Cuentas en la base de datos H2 que tenga 3
+campos:
+● nroCuenta: Integer
+● nombre: String
+● saldo: double
+
+Crear una connection a la base de datos e insertar una fila cuenta. Luego hacer
+un update que le sume 10 al saldo, después crear una tx y sumar otros 15 y
+generar una exception.
+Finalmente, corroborar con una consulta que la cuenta tiene un saldo igual al
+saldo inicial + 10.
