@@ -1,0 +1,28 @@
+Calcular categoria de empleado
+
+Una empresa de ventas digitales nos pide modificar el modelado de su sistema.
+Actualmente el sistema permite clasificar a los vendedores con base en el cumplimiento
+de ciertos requisitos.
+
+Se consideran los siguientes aspectos;
+- Tanto empleados como afiliados son vendedores.
+- Todo vendedor devuelve una categoría (mostrarCategoria) según la cantidad de
+puntos alcanzados.
+- El objetivo de los empleados es conseguir afiliados (conseguirAfiliado) y hacer
+ventas (vender). Cada uno consigue 10 puntos por cada nuevo afiliado, 5 puntos
+por cada venta que realice y 5 puntos por cada año de antigüedad que posea.
+- El objetivo de los afiliados es hacer ventas (vender), pero el cálculo de los puntos
+es diferente: consiguen 15 puntos por cada nueva venta.
+
+Los vendedores se categorizan de la siguiente manera:
+Menos de 20 puntos = novatos.
+Entre 20 y 30 puntos = aprendices.
+Entre 31 y 40 puntos = buenos.
+Más de 40 puntos = maestros.
+
+Se deberá implementar un método mostrarCatetogia que primero deberá
+calcularPuntos, luego recategorizar de acuerdo al puntaje obtenido en el método
+anterior y por último mostrar por consola el nombre del vendedor el total de puntos y la
+categoría.
+Realizar los casos de prueba necesarios para garantizar la calidad del método
+mostrarCategoría()
