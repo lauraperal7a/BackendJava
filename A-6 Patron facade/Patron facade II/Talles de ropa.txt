@@ -1,0 +1,18 @@
+Talles de ropa 
+
+Supongamos que tenemos una producción de ropa y tenemos que mostrar diferentes listas de ropa:
+●Lista Talle XS.
+●Lista Talle S.
+●Lista Talle M.
+●Lista Ropa importada.
+●Lista Ropa en malas condiciones.
+
+
+mediante el patrón flyweight debemos realizar un diseño para generar el cliente ropa, con los siguientes atributos:
+
+●Talle: este es un string.
+●Tipo: este es un string que describe el tipo de prenda: Ejemplo pantalón.
+●esNuevo: esta es una bandera para saber si es nuevo.
+●importada: esta es una bandera para saber si es nacional o internacional.
+
+Luego debemos generar dos tests: uno para corroborar que la fábrica nos devuelve el elemento que necesitamos y otro, que mida el tamaño de la factory y demuestre que es menor a la cantidad de pedidos. Por ejemplo, si pedimos cinco pantalones y dos remeras, el tamaño de la fábrica debería ser dos.

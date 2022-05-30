@@ -1,0 +1,6 @@
+Edades de personas aleatorias 
+
+Crear 50 personas con las siguientes propiedades:
+nombre, apellido  y edad;
+Mostrar por pantalla y guardar en archivo el promedio de edad de todas las personas.
+Mostrar por pantalla La persona con más edad y menos edad.

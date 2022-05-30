@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES />
+        <JAVADOC>
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/site/apidocs" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/contribs/CekiGulcu" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/contribs/Jamie Tsao" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/contribs/JimMoore" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/contribs/ThomasFenner" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/src/main/java" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/src/main/javadoc" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/src/performance/java" />
+          <root url="file://$USER_HOME$/Descargas/log4j-1.2.17/apache-log4j-1.2.17/tests/src/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

@@ -1,0 +1,14 @@
+INFO    2022-05-25 14:24:54,859 [main] logging.ListaPromedio  - La longituda de la lista es mayor a 5
+INFO    2022-05-25 14:24:54,860 [main] logging.ListaPromedio  - La longituda de la lista es mayor a 5
+INFO    2022-05-25 14:24:54,860 [main] logging.ListaPromedio  - La longituda de la lista es mayor a 10
+ERROR   2022-05-25 14:24:54,861 [main] logging.Test  - La lista es igual a cero 
+java.lang.Exception
+	at logging.ListaPromedio.<init>(ListaPromedio.java:21)
+	at logging.Test.main(Test.java:23)
+INFO    2022-05-25 14:57:11,108 [main] logging.ListaPromedio  - El promedio de la lista es: 25
+INFO    2022-05-25 14:58:24,501 [main] logging.ListaPromedio  - El promedio de la lista es: 25
+INFO    2022-05-25 14:58:24,517 [main] logging.ListaPromedio  - La persona menor es: Persona{nombre='Adrian', apellido='Moncada', edad=26}
+INFO    2022-05-25 14:58:24,518 [main] logging.ListaPromedio  - La persona mayor es: Persona{nombre='Lucila', apellido='Arjona', edad=25}
+INFO    2022-05-30 14:25:14,131 [main] logging.ListaPromedio  - El promedio de la lista es: 25
+INFO    2022-05-30 14:25:14,145 [main] logging.ListaPromedio  - La persona menor es: Persona{nombre='Adrian', apellido='Moncada', edad=26}
+INFO    2022-05-30 14:25:14,146 [main] logging.ListaPromedio  - La persona mayor es: Persona{nombre='Lucila', apellido='Arjona', edad=25}
