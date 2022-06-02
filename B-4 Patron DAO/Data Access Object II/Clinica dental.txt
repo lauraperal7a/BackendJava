@@ -1,0 +1,34 @@
+Clinica dental 
+
+Una clínica dental necesita informatizar su operatoria. Por lo cual, nos solicitan un
+sistema para la gestión de sus pacientes, donde puedan darlos de alta, buscarlos,
+eliminarlos y modificarlos. Al registrar un paciente los datos que se le solicitan son:
+
+● Apellido
+● Nombre
+● DNI
+● Fecha de ingreso
+● Domicilio
+	○ Calle
+	○ Número
+	○ Localidad
+	○ Provincia
+
+Además, le agregaremos un ID auto incrementable tanto a los pacientes como a los
+domicilios.
+
+Se pide:
+Utilizar H2 como base de datos, aplicar el patrón DAO y testear con JUNIT.
+Tener en cuenta que el modelado de datos debe contar con al menos 2 clases,
+PACIENTE y DOMICILIO.
+
+Tests de aceptación
+Guardar en la base de datos 2 o más pacientes con sus respectivos domicilios antes de
+ejecutar los tests.
+
+Utilizando la capa de servicio:
+1. Agregar un paciente con domicilio y buscarlo en la base de datos por ID.
+2. Eliminar el paciente anteriormente creado y luego buscarlo, debe tener también el
+domicilio.
+3. Buscar e imprimir en consola todos los pacientes con sus domicilios, serán los
+pacientes que agregamos antes de ejecutar el primer test.

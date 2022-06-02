@@ -1,0 +1,19 @@
+Sistema para farmacia
+
+Una farmacia nos pide que desarrollemos un sistema para gestionar el inventario
+de sus medicamentos. Es decir, un sistema que permita registrar los
+medicamentos y buscar un medicamento en particular. Luego del relevamiento
+obtuvimos la siguiente información:
+
+Un medicamento está compuesto por:
+● Código numérico
+● Nombre
+● Laboratorio que lo produce
+● Cantidad
+● Precio
+● Id
+
+Nuestro chapter lead de arquitectura nos pide: utilizar H2 como base de datos
+aplicando el patrón DAO para acceder a los datos y realizar los métodos que nos
+permitan registrar el medicamento.
+Loguear el resultado o la ejecución de cada operación utilizando log4j.
