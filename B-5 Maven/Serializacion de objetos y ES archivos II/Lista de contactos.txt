@@ -1,0 +1,10 @@
+Lista de contactos 
+
+Entrada y salida de archivos y serialización de objetos
+
+Se desea persistir un listado de contactos en un archivo. 
+Los contactos tienen un nombre, un mail y un teléfono. Para ello, 
+te proponemos probar en el método main guardar toda la colección 
+de contactos en un archivo y luego recuperar en otra colección el 
+contenido del archivo para mostrar la colección por consola.
+

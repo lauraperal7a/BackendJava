@@ -1,0 +1,4 @@
+Pepito;Perez;1;1000.0
+Susana;Jimenez;2;1500.0
+Ambrosio;Garcia;3;2000.0
+Marta;Habla;4;2100.0

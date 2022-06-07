@@ -1,0 +1,13 @@
+Clinica dental y odontologos 
+
+MAVEN
+
+Luego de los trabajos realizados para la clínica dental en clases anteriores, tenemos dos sistemas finalizados:
+◘Gestión de pacientes
+◘Gestión de odontólogos
+
+Ahora, nuestro chapter lead nos solicita:
+Unificar  los dos proyectos en uno, es decir, tener en único sistema, el ABM de pacientes y odontólogos.
+Utilizar Maven e incluir las librerías necesarias como dependencias.
+Ejecutar todos los tests desarrollados anteriormente con Maven Test.
+

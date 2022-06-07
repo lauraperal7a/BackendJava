@@ -1,0 +1,13 @@
+Agregar empleados a empresa
+
+Parte 1
+Se desea persistir una empresa la cual tiene un CUIT y razón social junto con su listado de empleados en un archivo. Los empleados tienen un nombre, apellido, legajo y sueldo.
+Probar en el método main de instanciar una empresa con sus 4 empleados y persistir en un archivo a la empresa. Luego, recuperar del archivo la empresa, la cual deberá tener también sus 4 empleados.
+
+Parte 2
+Guardar los empleados en un archivo “empleados.txt”, pero sin utilizar la clase ObjectOutputStream, ya que deben guardarse todos los atributos de los empleados separados por “;”.
+Por ejemplo:
+Juan;Rodriguez;1154;56000
+Jorge;Sanchez;2322;74000
+Mario;Martinez;5420;46000
+Santiago;Pereyra;7293;75000
