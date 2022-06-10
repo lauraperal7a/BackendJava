@@ -1,0 +1,5 @@
+com\example\entrenador\controller\EntrenadorController.class
+com\example\entrenador\service\impl\EntrenadorServiceImpl.class
+com\example\entrenador\model\Entrenador.class
+com\example\entrenador\EntrenadorApplication.class
+com\example\entrenador\service\EntrenadorService.class
