@@ -1,0 +1,160 @@
+Estructura de los proyectos en aplicaciones empresariales:
+Arquitectura multicapa
+Cuando creamos nuestro proyecto, la estructura del mismo debe representar la arquitectura multicapa elegida. En nuestro caso estamos trabajando con unas de las arquitecturas más utilizadas en las compañías.
+
+En particular, cada capa debe incluirse en un paquete específico. Cada uno de estos tiene que tener el mismo nombre que la capa. De esta forma, encontrar una clase se vuelve muy fácil e intuitivo. Al mismo tiempo, no habrá dudas sobre dónde ubicar una nueva clase. Cabe destacar que no existe un modelo único y dependiendo del proyecto tendremos más o menos capas.
+
+
+
+Estructura del proyecto
+La estructura de un proyecto debería verse tal y como se puede apreciar en la siguiente imagen, donde en cada uno de esos paquetes crearemos las clases correspondientes.
+
+
+
+¿Qué es un POJO?
+POJO o Plain Old Java Object es un concepto que se comenzó a utilizar con los frameworks no intrusivos, como Spring y Hibernate. Es una instancia de una clase que no extiende ni implementa nada en especial.
+
+No debe extender clases preespecificadas.
+No debe implementar interfaces preespecificadas.
+No debe tener anotaciones preespecificadas.
+No hay restricción sobre el acceso-modificador de los atributos.
+No es necesario incluir ningún constructor en él.
+
+Entonces, si en tu programa deseas que una clase represente a la entidad podés crear
+un POJO de la siguiente manera.
+    
+
+public class Alumno {
+   private String name;
+   private String lastName;
+  
+   public int yearsOld;
+
+   public String getName() {
+       return name;
+   }
+
+   public void setName(String name) {
+       this.name = name;
+   }
+
+   public String getLastName() {
+       return lastName;
+   }
+
+   public void setLastName(String lastName) {
+       this.lastName = lastName;
+   }
+}
+
+    
+
+  
+
+
+En clases anteriores vimos la magia que nos provee el uso de @annotation en nuestro código. Para continuar con nuestro aprendizaje de cómo programamos una aplicación en Java necesitamos seguir conociendo más sobre:
+
+@Component
+@Service
+@Repository
+
+@Component
+Es una anotación de nivel de clase que indica que la clase con esta anotación es un componente o Bean de Spring.
+
+Spring Framework detecta automáticamente las clases anotadas con @Component . Por ejemplo
+
+    
+
+@Component
+public class SoyUnComponente {
+	// …
+}
+
+    
+
+  
+Esta annotation posee otras especificaciones más concretas que podemos utilizar:
+
+@Repository @Service @Controller
+
+@Service
+La annotation @Service sirve para indicar que una clase pertenece a la capa de negocio, es decir, donde codificamos la lógica de negocios de nuestra aplicación y ocultamos la complejidad de la misma al resto de las capas.
+
+@Service es una especialización de @Component, añade un valor semántico que indica la utilidad de la clase anotada como @Service para la capa de negocio.
+
+    
+
+@Service
+public class SoyUnServicio {
+	// …
+}
+
+    
+
+  
+@Repository
+Con esta anotación estaremos definiendo una clase que implementará el patrón repositorio, que es el encargado de almacenar datos en una base de datos.
+
+    
+
+@Repository
+public class SoyUnaClaseParaGuardarDatos {
+	// …
+}
+
+    
+
+  
+Es recomendable utilizar cada anotación para lo que es. Por lo tanto, aunque es posible intercambiarlas, no es recomendable.
+
+
+
+Inyección de dependencias con Spring boot
+Como ya sabés, se escribieron miles de programas que producen o consumen un servicio web que se conectan a una base de datos de algún tipo. Esto significa que puede estar el mismo código repetido una y otra vez para realizar tareas básicas como obtener y almacenar información, responder a solicitudes, entre otras.
+
+En el caso de Spring framework recopiló y escribió gran parte del código repetido en forma de bibliotecas. Pero usar ese código se volvió difícil a la hora de integrar las diferentes capas de nuestro sistema.
+
+Por otro lado, Spring boot utiliza varias técnicas de Java para reducir en gran medida lo que tenemos que hacer para conectar las diferentes cosas en nuestra aplicación.
+
+
+Inversión de control
+Los dos conceptos IoC e inyección de dependencias tienen relación entre sí, pero no de forma simétrica.
+
+En programación orientada a objetos hay varias formas de implementar el patrón IoC. Uno de ellos es la inyección de dependencias, pero no todo patrón IoC es inyección de dependencias.
+
+
+Inversión de control o Inversion of Control en inglés (IoC) se refiere a todo aquel diseño de software cuyo propósito obedece a la necesidad de querer controlar el flujo de ejecución de este, de forma automática y transparente, es decir, ceder el control de ese flujo a un “agente externo”, normalmente un framework.
+
+
+
+
+
+Contenedor de Inversión de Control de Spring
+Un tema clave en Spring es el contenedor de inversión de control, que es compatible con la interfaz ApplicationContext. Spring crea este "espacio" en nuestra aplicación donde se pueden colocar algunas instancias de objetos como grupos de conexión de bases de datos, clientes HTTP, etc. Estos objetos, llamados beans, se pueden usar más tarde en otras partes de la aplicación, comúnmente a través de una interfaz para abstraer su código de implementaciones específicas.
+
+Un bean es un objeto que Spring administra en tiempo de ejecución con el contenedor de inversión de control. Estos se crean y agregan a un "repositorio de objetos" para que puedan ser obtenidos más tarde.
+
+El mecanismo para hacer referencia a uno de estos beans desde el ApplicationContext en otras clases es lo que llamamos inyección de dependencia, y en Spring esto es posible a través de la configuración XML o anotaciones de código.
+
+
+
+Bean
+En Spring, los objetos que forman la columna vertebral de la aplicación y que son administrados por el contenedor de Inversión de control se denominan beans.
+
+Un bean es un objeto que es instanciado, ensamblado y administrado por un contenedor de inversión de control. Dicho de otra forma: un bean es simplemente uno de los muchos objetos de nuestra aplicación.
+
+
+
+Contenedor de inversión de control Spring
+La interfaz org.springframework.context.ApplicationContext representa el contenedor de inversión de control y es responsable de crear instancias, configurar y ensamblar los beans.
+
+El contenedor obtiene sus instrucciones sobre qué objetos instanciar, configurar y ensamblar leyendo los metadatos de configuración. Los metadatos de configuración se representan en XML o a través de las anotaciones.
+
+
+
+
+
+
+
+
+
