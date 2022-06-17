@@ -1,0 +1,26 @@
+Invocando una API desde la Vista
+Esta arquitectura se utiliza para poder traer o modificar datos del front end sin tener que refrescar toda la pantalla (AJAX). Es muy utilizada en otras tecnologías de front end como Reac o Angular.
+
+Repaso JavaScript Fetch
+Para conectar la vista (HTML) con nuestro back end (APIs) lo vamos a hacer invocando las APIs mismas a través de AJAX y para ello utilizaremos JavaScript con Fetch. Para refrescar la memoria, te invitamos a mirar estos dos videos que explican cómo utilizar Fetch para invocar APIs, ya sea para una consulta (GET) o para dar de alta o actualizar datos (POST).
+
+
+Como ya vimos anteriormente, el objetivo del patrón MVC es separar la vista de la lógica de la aplicación para facilitar la reutilización del código y simplificar el desarrollo de ambas capas de forma separada para permitirnos el cambio de la vista, o crear aplicaciones con múltiples vistas.
+HTML + JavaScript + APIs con Spring Boot
+Ahora que ya sabemos construir APIs, veamos una opción para consumirlas desde las vistas de HTML utilizando JavaScript con Fetch.
+
+Para explicar cómo podemos hacerlo, vamos a agregarle vistas al proyecto de la API de películas que desarrollamos anteriormente:
+
+Una vista HTML para dar de alta una película a través de un formulario.
+Una vista HTML para listar todas las películas y que nos permita eliminar las que ya no deseamos y seleccionar aquella que queramos editar para modificar una película.
+
+
+
+Invocando una API desde el back end
+Esta arquitectura se utiliza cuando tengamos que invocar una API de un tercero, por ejemplo, una API de AFIP, Facebook, Twitter, etcétera. En estos casos es recomendable consumir y trabajar con estas APIs desde la capa de acceso a datos. Como sabemos, en el mundo de la programación existen muchas formas de resolver un mismo problema. Nosotros vamos a ver cómo podemos consumir diferentes APIs, utilizando Unirest.
+
+¿Qué es Unirest?
+Unirest es una librería que nos permite conectarnos como clientes a servicios REST, no solo está disponible para Java, sino que también se utiliza en muchos lenguajes, como Node.js, .Net, Python, Ruby, entre otros. Veamos cómo implementarlo.
+
+
+
