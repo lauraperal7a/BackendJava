@@ -1,0 +1,45 @@
+APIs web
+Se utilizan para crear aplicaciones que necesitan ofrecer interoperabilidad como parte de sus características. Es decir, permiten comunicarse con otras aplicaciones sin depender del sistema operativo y los lenguajes de programación.
+Una API web es una colección de estándares y protocolos que las aplicaciones y
+los sistemas usan para intercambiar datos a través de Internet.
+
+¿SOAP?
+Si bien en la actualidad ya no usamos en los nuevos proyectos SOAP (Simple Object Access Protocol), consideramos que es importante que sepas qué es, ya que en el mercado existen varios proyectos que aún mantienen este tipo de sistemas. SOAP es un protocolo estándar que define cómo dos objetos en diferentes procesos pueden comunicarse por medio de un intercambio de datos específico utilizando archivos (XML). Por lo general, opera con el protocolo HTTP, pero puede ser enviado por POP3, TCP, colas de mensajería (JMS, MQ, etc.) o FTP.
+
+ en la actualidad...
+Actualmente la gran mayoría de las aplicaciones consumen o proveen una API Rest.
+
+
+REST (transferencia de estado de presentación o Representational State Transfer) es una arquitectura de software que proporciona muchas características y protocolos subyacentes que rigen el comportamiento de los clientes y los servidores.
+
+Un servicio REST no tiene estado (es stateless), quiere decir que no se puede llamar a un servicio REST, pasarle unos datos y esperar que “los recuerde” en la siguiente petición, porque no lo hará.
+
+De ahí el nombre: el estado lo mantiene el cliente y, por lo tanto, es el cliente quien debe pasar el estado en cada llamada.
+
+Características principales:
+
+Requiere menos recursos del servidor.
+Se centra en la escalabilidad y rendimiento a gran escala para
+sistemas distribuidos hipermedia.
+Funciona basándose en los métodos HTTP (POST, GET, PUT y DELETE)
+
+¿Qué significa RESTful?
+Hace referencia a un servicio web que implementa la arquitectura REST. Es decir:
+
+Implementa la arquitectura cliente- servidor.
+Está basado en protocolo HTTP.
+No mantiene estado.
+Se accede a los recursos por medio de una URL.
+Utiliza explícitamente los métodos HTTP. Todos los datos que movemos por medio del protocolo HTTP son recursos y podemos acceder a ellos utilizando los siguientes métodos.
+
+Ejemplos
+Todos los sitios web y redes sociales más populares ofrecen APIs RESTful. Algunos ejemplos son:
+
+Facebook https://developers.facebook.com/
+
+Cloudways: https://www.cloudways.com/blog/introducing-cloudways-api/
+
+Twitter: https://dev.twitter.com/rest/public
+
+Google Translate: https://cloud.google.com/translate/docs/translating-text
+

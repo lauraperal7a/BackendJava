@@ -1,0 +1,37 @@
+Data Transfer Object (DTO)
+Una de las problemáticas más comunes cuando desarrollamos aplicaciones es el diseño de la forma en que la información debe viajar desde la capa de servicios (o desde el controlador) hasta las aplicaciones o capa de presentación. Muchas veces, por desconocimiento, utilizamos las clases de entidades para retornar los datos. Esto ocasiona que devolvamos más datos de los necesarios o que incluso tengamos que ir en más de una ocasión a la capa de servicios para recuperar los datos requeridos.
+
+Para facilitarnos este trabajo existe el patrón DTO.
+
+El patrón DTO tiene como finalidad crear un objeto plano (POJO) con una serie de
+atributos que puedan ser enviados o recuperados del servidor en una sola invoca-
+ción, de tal forma que un DTO puede contener información de múltiples fuentes o
+tablas y agruparla en una única clase simple.
+
+
+Entidades vs DTO
+Un error muy frecuente es el hecho de utilizar las clases de entidad para la transmisión de datos entre el cliente y el servidor. Sin embargo, las entidades son clases que fueron diseñadas para mapear contra la base de datos, no para ser una vista para una pantalla o servicio determinado, lo que provoca que muchos de los campos no puedan ser serializables o no contengan todos los campos necesarios.
+
+El hecho de que las entidades no contengan todos los atributos necesarios, o que no sean serializables, trae otros problemas. Por ejemplo, la necesidad de agregar más atributos a las entidades con el único objetivo de poder cubrir los requerimientos de transferencia de datos, dejando de lado el verdadero propósito de la entidad, que es únicamente mapear contra la base de datos, lo que va llevando lentamente a la creación de una mezcla entre Entidad y DTO.
+
+ResponseEntity
+Con Spring generalmente tenemos muchas formas de lograr el mismo objetivo, incluido el ajuste fino de las respuestas HTTP.
+
+Veamos la clase Response Entity < T >.
+
+Alternativas
+@ResponseBody: en las aplicaciones clásicas de Spring MVC, los endpoints generalmente devuelven páginas HTML renderizadas. A veces solo necesitamos devolver los datos reales.
+En tales casos podemos marcar el método del controlador con @ResponseBody, y Spring trata el valor de resultado del método como el propio cuerpo de respuesta HTTP.
+@ResponseStatus: cuando un endpoint regresa con éxito, Spring proporciona una respuesta HTTP 200 (OK). Si el endpoint arroja una excepción, Spring busca un controlador de excepciones que indique qué estado HTTP usar.
+Podemos marcar estos métodos con @ResponseStatus y, por lo tanto, Spring regresa con un estado HTTP personalizado.
+Manipular la respuesta directamente: Spring también nos permite acceder directamente al objeto javax.servlet.http.HttpServletResponse; solo tenemos que declararlo como argumento de método, como vemos en la siguiente imagen:
+    
+
+@GetMapping("/manual")
+void manual (HttpServerletResponse response) throws IOException {
+       response.setHeader("Custom - Header", "foo");
+       response.setStatus(200);
+       response.getWriter().println("Hello Word!");
+}
+
+
