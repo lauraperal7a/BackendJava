@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>CRUD dentists</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/update_dentist.js"></script>
+    <script type="text/javascript" src="/js/delete_dentist.js"></script>
+    <script type="text/javascript" src="/js/get_dentist.js"></script>
+    <script type="text/javascript" src="/js/post_dentist.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="/alta-dentists.html">Add new</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dentists/">All</a>
+        </li>
+    </ul>
+    <div id="div_dentist_table">
+        <h2>Dentists</h2>
+        <div class="row col-md-6 table-responsive">
+            <table id="dentistTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>lastName</th>
+                    <th>licenseNumber</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="display: none;
+											background-color:#e6fffa; padding:10px; border-radius:3px"
+             id="div_dentist_updating">
+            <form id="update_dentist_form">
+                <div class="form-group">
+                    <label for="dentist_id">Id:</label>
+                    <input type="text" class="form-control" id="dentist_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="dentist_name">Nombre:</label>
+                    <input type="text" class="form-control" placeholder="name" id="dentist_name">
+                </div>
+                <div class="form-group">
+                    <label for="dentist_lastName">Apellido:</label>
+                    <input type="text" class="form-control" placeholder="lastName" id="dentist_lastName">
+                </div>
+                <div class="form-group">
+                    <label for="dentist_licenseNumber">Matricula:</label>
+                    <input type="text" class="form-control" placeholder="licenseNumber" id="dentist_licenseNumber">
+                </div>
+               
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div id="response" style="display:none; margin:10px">
+            </div>
+        </div>
+    </div>
+    <hr>
+
+</div>
+</body>
+</html>
