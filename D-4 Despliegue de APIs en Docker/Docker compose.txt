@@ -1,0 +1,145 @@
+Cómo desplegar una aplicación basada en microservicios
+
+La arquitectura propuesta
+La arquitectura se compone por microservicios de 2 clases, el primero es Redis (Caché) y el segundo tipo una API REST Stateless replicable que provee acceso a la base de datos en Memoria RAM Redis en sus dos modos de trabajo HashOperations (Base de datos NoSQL) con operaciones GET, POST, PUT, DELETE y ListOperations (Listas/Colas) con operaciones POP y PUSH.
+
+La aplicación
+El esquema de la API rest es el siguiente:
+
+Conseguir todos los objetos bajo la clave como un mapa
+GET: /api/v1/{redis_key}
+Conseguir un objeto bajo la clave y su hash
+GET: /api/v1/{redis_key}/{hash_key}
+Agregar un nuevo objeto, el método responde con su hash, el valor objeto debe ir dentro del body
+POST: /api/v1/{redis_key}
+Actualizar un objeto con el hash específico, el valor del objeto debe ir dentro del body.
+PUT: /api/v1/{redis_key}/{hash_key}
+Nota: Al actualizar el objeto el hash se conserva
+Eliminar el objeto bajo la clave y son el hash específico DELETE: /api/v1/{redis_key}/{hash_key}
+
+Haciendo uso de esta API es posible almacenar datos temporalmente haciendo uso del poder de Redis de forma NoSQL. 
+
+Información general de la API
+Importante: Cada redis_key solo se puede usar en un esquema, es decir, como una cola o como una base de datos NoSQL.
+
+Esta API cuenta con un Job para realizar un snapshot cada 30 minutos de sí misma, el tiempo es configurable en application.yaml mediante una expresión cron. Mirese Variables de entorno
+Para este ejemplo el controlador principal maneja los datos de la manera siguiente:
+K: redis_key del tipo String
+H: hash_key del tipo Integer
+V: value del tipo Object
+Variables de entorno
+REDIS_DB_HOST: Especifica la IP o Nombre del Servidor Redis, por defecto es localhost.
+REDIS_DB_PORT: Especifica el Puerto del Servidor Redis, por defecto es 6379.
+REDIS_DB_PASSWORD: Especifica la contraseña del Servidor Redis, por defecto no tiene valor.
+REDIS_DB_DUMP_CRON: Especifica la expresión cron para el guardado automático Servidor
+Redis, por defecto es 0 */30 * * * *, esta expresión como esta específica que se le envía una orden para hacer un Snapshot en disco al Servidor Redis cada 30 minutos.
+Las expresiones cron en Spring constan de 6 campos que especifican una condición a cumplir.
+
+Segundo: Valores de 0 a 59, admite usar el separador / para especificar una periodicidad Ej: */5 significa cada 5 segundos.
+Minuto: Valores de 0 a 59, admite usar el separador / para especificar una periodicidad.
+Hora: Valores de 0 a 23, admite usar el separador / para especificar una periodicidad, también admite el separador - que indica un rango Ej: 8-10 significa de 8AM a 10AM.
+Día del mes: Valores de 0 a 31, admite los separadores - y /.
+Mes: Valores de 1 a 12.
+Día de la semana: Acepta valores MON TUE WED THU FRI SAT SUN, también acepta el separador - y el comodín ?, Ej: MON-FRI significa de Lunes a Viernes.
+Trabajo futuro
+Se puede copiar el controlador y cambiar los tipos de datos en uno nuevo de acuerdo a las necesidades.
+Aún falta implementar el tiempo de vida de los registros.
+También sería útil agregar implementación para usar Redis en clúster y usar su servicio Sentinel, todo esto se puede hacer programáticamente.
+
+
+Despliegue de la aplicación
+Archivos de despliegue con docker-compose
+Con los siguientes dos archivos y con Docker Compose podemos:
+
+Descargar el código fuente del repositorio.
+Construir el artefacto de la API.
+Construir y desplegar los microservicios en contenedores.
+/docker-compose.yml
+
+version: '3'
+services:
+  redis-api:
+    build:
+      dockerfile: Dockerfile
+      context: ./redis-api
+    ports:
+      - "8080:8080"
+    networks:
+      - academia-pragma
+    restart: unless-stopped
+    deploy: # Este elemento es soportado por docker-swarm, no por docker-compose
+      replicas: 3
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+    environment:
+      - REDIS_DB_HOST=redis-db
+      - REDIS_DB_PORT=6379
+      - REDIS_DB_PASSWORD=
+      - REDIS_DB_DUMP_CRON=0 */1 * * * *
+  redis-db:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - academia-pragma
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+    volumes:
+      - redis-data:/data
+  load-balancer:
+    image: nginx
+    ports:
+      - "8080:8080"
+    networks:
+      - academia-pragma
+    restart: unless-stopped
+networks:
+  academia-pragma:
+    driver: bridge
+volumes:
+  redis-data:
+
+
+/redis/Dockerfile
+
+ 
+
+# Clonando repositorio
+FROM alpine/git
+WORKDIR /app
+RUN ["git", "clone", "https://git.pragma.com.co/sergio.martinez/OKD-Despliegue.git"]
+
+# Construccion de artefacto con Maven
+FROM maven:3.5-jdk-8-alpine
+WORKDIR /app
+COPY --from=0 /app/OKD-Despliegue/redis /app
+# Necesario para agregar la configuracion de proxy para que maven pueda conectarse
+COPY --from=0 /app/OKD-Despliegue/proxy-settings.xml /root/.m2/settings.xml
+RUN mvn install
+
+# Construcción de la imagen del contenedor
+ARG REDIS_DB_HOST=app_redis_db
+ARG REDIS_DB_PORT
+ARG REDIS_DB_PASSWORD
+ARG REDIS_DB_DUMP_CRON
+FROM registry.redhat.io/redhat-openjdk-18/openjdk18-openshift
+COPY --from=1 /app/target/redis-0.0.1-SNAPSHOT.jar app.jar
+USER root
+RUN chmod a+r app.jar
+USER jboss
+ENV REDIS_DB_HOST=$REDIS_DB_HOST
+ENV REDIS_DB_PORT=$REDIS_DB_PORT
+ENV REDIS_DB_PASSWORD=$REDIS_DB_PASSWORD
+ENV REDIS_DB_DUMP_CRON=$REDIS_DB_DUMP_CRON
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","./app.jar"]
+
+
+El primer objetivo es correr la aplicación en Docker.
+
+docker-compose up
