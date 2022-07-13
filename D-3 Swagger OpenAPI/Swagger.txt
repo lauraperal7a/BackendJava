@@ -1,0 +1,16 @@
+Swagger es un conjunto de herramientas de software de código abierto para diseñar, construir, documentar, y utilizar 
+servicios web RESTful. Fue desarrollado por SmartBear Software e incluye documentación automatizada, generación de código, y generación de casos de prueba.
+
+Uso
+El uso de herramientas de código abierto Swagger se puede dividir en diferentes casos de uso: desarrollo, interacción con API y documentación.
+
+Desarrollar APIs
+Al crear APIs, las herramientas Swagger se pueden usar para generar automáticamente un documento de API abierta basado en el código mismo. Esto incrusta la descripción de la API en el código fuente de un proyecto y se denomina informalmente desarrollo de API de código primero o ascendente.
+
+Alternativamente, utilizando Swagger Codegen, los desarrolladores pueden desacoplar el código fuente del documento Open API y generar código de cliente y servidor directamente desde el diseño. Esto hace posible diferir el aspecto de codificación.
+
+Interactuar con las API
+Con el proyecto Swagger Codegen, los usuarios finales generan SDK de cliente directamente desde el documento de OpenAPI, lo que reduce la necesidad de código de cliente generado por humanos. En agosto de 2017, el proyecto Swagger Codegen admitía más de 50 idiomas y formatos diferentes para la generación de SDK del cliente.
+
+Documentar APIs
+Cuando se describe en un documento de OpenAPI, las herramientas de código abierto de Swagger pueden usarse para interactuar directamente con la API a través de la interfaz de usuario de Swagger . Este proyecto permite conexiones directamente a API en vivo a través de una interfaz de usuario interactiva basada en HTML. Las solicitudes se pueden realizar directamente desde la interfaz de usuario y las opciones exploradas por el usuario de la interfaz.
